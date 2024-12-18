@@ -7,7 +7,7 @@ export const Menupick = () => {
       name: "Lettuce Leaf",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "/menu2.png", // No need for '../', just use the filename
+      image: "menu2.png", // No need for '../', just use the filename
     },
     {
       name: "Glow Cheese",
