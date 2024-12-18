@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0D0D0D;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.my-masonry-grid {
+  display: flex;
+  width: 100%;
+}
+.my-masonry-grid_column {
+  padding-left: 16px; /* Gap between columns */
+  background-clip: padding-box;
+}
+.my-masonry-grid img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
