@@ -7,49 +7,49 @@ export const Menupick = () => {
       name: "Lettuce Leaf",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "../menu2.png", // Remove '../' part
+      image: "menu2.png", // No need for '../', just use the filename
     },
     {
       name: "Glow Cheese",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "../menu3.png",
+      image: "menu3.png",
     },
     {
       name: "Fresh Breakfast",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "14.5$",
-      image: "../menu4.png",
+      image: "menu4.png",
     },
     {
       name: "Italian Pizza",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "14.5$",
-      image: "../menu5.png",
+      image: "menu5.png",
     },
     {
       name: "Mild Butter",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "../menu6.png",
+      image: "menu6.png",
     },
     {
       name: "Slice Beef",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "../menu7.png",
+      image: "menu7.png",
     },
     {
       name: "Fresh Bread",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "../menu8.png",
+      image: "menu8.png",
     },
     {
       name: "Mushroom Pizza",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "../menu9.png",
+      image: "menu9.png",
     },
   ];
 
@@ -81,9 +81,9 @@ export const Menupick = () => {
         {/* Left Image Section */}
         <div className="col-span-1 flex justify-center items-center relative object-contain">
           <Image
-            src="/menu1.png" // Update image path
+            src="/menu1.png" // This is the correct path for images in the 'public' folder
             alt="Main Dish"
-            width={304} // Adjust width and height
+            width={304}
             height={304}
             className="relative z-10 w-76 h-76 object-cover rotat"
           />
@@ -97,9 +97,9 @@ export const Menupick = () => {
               className="flex items-center space-x-4 p-2 rounded-lg shadow-lg transition-all hover:shadow-2xl hover:bg-[#333] cursor-pointer"
             >
               <Image
-                src={`/assets/${item.image}`} // Corrected path
+                src={`/assets/${item.image}`} // Direct path from the 'public' folder (make sure these images are inside the 'public/assets' folder)
                 alt={item.name}
-                width={64} // Adjust dimensions
+                width={64}
                 height={64}
                 className="w-16 h-16 object-cover rounded-md"
               />
