@@ -1,6 +1,12 @@
-import { FaFacebookF, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaPinterest,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import { PiClockClockwiseLight } from "react-icons/pi";
-import Image from 'next/image';
+import Image from "next/image";
 
 export const Footer = () => {
   const recentPosts = [
@@ -28,10 +34,12 @@ export const Footer = () => {
         {/* Left Side: Heading and Paragraph */}
         <div className="w-full md:w-1/2 ml-16">
           <h2 className="text-3xl font-helvetica font-extrabold mb-2 leading-tight">
-            <span className="text-[#FF9F0D]">St&apos;</span>ill You Need Our Support?
+            <span className="text-[#FF9F0D]">St&apos;</span>ill You Need Our
+            Support?
           </h2>
           <p className="text-[15px] font-inter font-light leading-relaxed">
-            Don’t wait, make a smart & logical quote here. It's pretty easy.
+            Don&apos;t wait, make a smart & logical quote here. It&apos;s pretty
+            easy.
           </p>
         </div>
 
@@ -95,7 +103,14 @@ export const Footer = () => {
         <div className="w-1/4">
           <h3 className="text-lg font-bold mb-4">Help?</h3>
           <ul>
-            {[ "FAQ", "Term & conditions", "Reporting", "Documentation", "Support Policy", "Privacy",].map((item, index) => (
+            {[
+              "FAQ",
+              "Term & conditions",
+              "Reporting",
+              "Documentation",
+              "Support Policy",
+              "Privacy",
+            ].map((item, index) => (
               <li key={index} className="mb-2">
                 <a href="#" className="hover:text-[#FF9F0D]">
                   {item}
@@ -132,22 +147,38 @@ export const Footer = () => {
       <div className="w-full text-center mt-8 border-t border-[#333] pt-4 relative">
         <div className="flex justify-between items-center px-4 bg-[rgba(255, 255, 255, 0.1)] backdrop-blur-lg rounded-lg">
           <p className="text-sm text-gray-400">
-            Copyright © {new Date().getFullYear()} by Muhammad Anas Jamshaid. All Rights Reserved.
+            Copyright © {new Date().getFullYear()} by Muhammad Anas Jamshaid.
+            All Rights Reserved.
           </p>
           <div className="flex space-x-3 relative">
-            <a href="#" className="bg-[#FF9F0D] p-3 rounded-lg hover:bg-[#e6890d] transition duration-300">
+            <a
+              href="#"
+              className="bg-[#FF9F0D] p-3 rounded-lg hover:bg-[#e6890d] transition duration-300"
+            >
               <FaFacebookF className="text-white text-lg" />
             </a>
-            <a href="#" className="bg-[#FF9F0D] p-3 rounded-lg hover:bg-[#e6890d] transition duration-300">
+            <a
+              href="#"
+              className="bg-[#FF9F0D] p-3 rounded-lg hover:bg-[#e6890d] transition duration-300"
+            >
               <FaTwitter className="text-white text-lg" />
             </a>
-            <a href="#" className="bg-[#FF9F0D] p-3 rounded-lg hover:bg-[#e6890d] transition duration-300">
+            <a
+              href="#"
+              className="bg-[#FF9F0D] p-3 rounded-lg hover:bg-[#e6890d] transition duration-300"
+            >
               <FaInstagram className="text-white text-lg" />
             </a>
-            <a href="#" className="bg-[#FF9F0D] p-3 rounded-lg hover:bg-[#e6890d] transition duration-300">
+            <a
+              href="#"
+              className="bg-[#FF9F0D] p-3 rounded-lg hover:bg-[#e6890d] transition duration-300"
+            >
               <FaYoutube className="text-white text-lg" />
             </a>
-            <a href="#" className="bg-[#FF9F0D] p-3 rounded-lg hover:bg-[#e6890d] transition duration-300">
+            <a
+              href="#"
+              className="bg-[#FF9F0D] p-3 rounded-lg hover:bg-[#e6890d] transition duration-300"
+            >
               <FaPinterest className="text-white text-lg" />
             </a>
           </div>
