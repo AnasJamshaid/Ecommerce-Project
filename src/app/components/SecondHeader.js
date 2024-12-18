@@ -19,7 +19,7 @@ const SecondHeader = () => {
         {/* Logo */}
         <div className="text-2xl font-bold">
           <span className="text-white">Food</span>
-          <span className="text-yellow-500">luck</span>
+          <span className="text-yellow-500">tuck</span>
         </div>
 
         {/* Navigation */}
