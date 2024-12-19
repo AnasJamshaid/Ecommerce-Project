@@ -54,7 +54,7 @@ export const Menupick = () => {
   ];
 
   return (
-    <div className="relative h-full flex flex-col items-center bg-cover bg-center overflow-hidden bg-[#0D0D0D] py-8 mt-52">
+    <div className="relative h-full flex flex-col items-center bg-cover bg-center overflow-hidden bg-[#0D0D0D] py-8 mt-60">
       {/* Header Section */}
       <div className="w-full mx-auto px-4 lg:px-8 relative z-10 flex flex-col items-center text-center text-white mb-8">
         <h1 className="text-3xl font-great-vibes text-[#FF9F0D] mb-3">
@@ -77,20 +77,20 @@ export const Menupick = () => {
       </div>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-6 mb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 space-x-11 mb-10 px-36  mt-4" >
         {/* Left Image Section */}
         <div className="col-span-1 flex justify-center items-center relative">
           <Image
             src="/menu1.png" // Correct path for images in the 'public' folder
             alt="Main Dish"
-            width={304}
-            height={304}
+            width={500}
+            height={500}
             className="relative z-10 w-76 h-76 object-cover"
           />
         </div>
 
         {/* Menu Items Section */}
-        <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 ">
           {menuItems.map((item, index) => (
             <div
               key={index}
