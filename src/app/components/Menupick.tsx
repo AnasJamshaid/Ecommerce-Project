@@ -7,7 +7,7 @@ export const Menupick = () => {
       name: "Lettuce Leaf",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.6$",
-      image: "menu2.png", // No need for '../', just use the filename
+      image: "menu2.png", // Image path without '../'
     },
     {
       name: "Glow Cheese",
@@ -79,25 +79,25 @@ export const Menupick = () => {
       {/* Main Content */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-6 mb-10">
         {/* Left Image Section */}
-        <div className="col-span-1 flex justify-center items-center relative object-contain">
+        <div className="col-span-1 flex justify-center items-center relative">
           <Image
-            src="/menu1.png" // This is the correct path for images in the 'public' folder
+            src="/menu1.png" // Correct path for images in the 'public' folder
             alt="Main Dish"
             width={304}
             height={304}
-            className="relative z-10 w-76 h-76 object-cover rotat"
+            className="relative z-10 w-76 h-76 object-cover"
           />
         </div>
 
         {/* Menu Items Section */}
-        <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {menuItems.map((item, index) => (
             <div
               key={index}
-              className="flex items-center space-x-4 p-2 rounded-lg shadow-lg transition-all hover:shadow-2xl hover:bg-[#333] cursor-pointer"
+              className="flex items-center space-x-4 p-4 rounded-lg shadow-lg transition-all hover:shadow-2xl hover:bg-[#333] cursor-pointer"
             >
               <Image
-                src={`/assets/${item.image}`} // Direct path from the 'public' folder (make sure these images are inside the 'public/assets' folder)
+                src={`/assets/${item.image}`} // Updated path
                 alt={item.name}
                 width={64}
                 height={64}
