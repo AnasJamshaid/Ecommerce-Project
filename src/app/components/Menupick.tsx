@@ -7,49 +7,49 @@ export const Menupick = () => {
       name: "Lettuce Leaf",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.6$",
-      image: "../menu2.png", // No need for '../', just use the filename
+      image: "menu2.png", // No need for '../', just use the filename
     },
     {
       name: "Glow Cheese",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "../menu3.png",
+      image: "menu3.png",
     },
     {
       name: "Fresh Breakfast",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "14.5$",
-      image: "../menu4.png",
+      image: "menu4.png",
     },
     {
       name: "Italian Pizza",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "14.5$",
-      image: "../menu5.png",
+      image: "menu5.png",
     },
     {
       name: "Mild Butter",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "../menu6.png",
+      image: "menu6.png",
     },
     {
       name: "Slice Beef",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "../menu7.png",
+      image: "menu7.png",
     },
     {
       name: "Fresh Bread",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "../menu8.png",
+      image: "menu8.png",
     },
     {
       name: "Mushroom Pizza",
       description: "Lacus nisi, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "../menu9.png",
+      image: "menu9.png",
     },
   ];
 

@@ -16,7 +16,7 @@ const Menu = () => {
         className="relative text-white h-72 bg-cover bg-center"
         style={{ backgroundImage: "url('/page-bg.jpg')" }}
       >
-        <div className="absolute inset-0 bg-[#333333] bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative flex flex-col items-center justify-center h-full space-y-4">
           <h1 className="text-4xl font-bold">{pageTitle}</h1>
           <Breadcrumb />
@@ -29,11 +29,14 @@ const Menu = () => {
         <div className="mb-20 mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 -space-x-14">
             {/* Image on the left */}
+
             <div>
-              <img
+              <Image
                 src="/pic5.jpg"
                 alt="Starter Dish"
-                className="rounded-lg w-[500px] h-[670px]"
+                className="rounded-lg"
+                width={500} // Specify the width
+                height={670} // Specify the height
               />
             </div>
 
@@ -161,11 +164,14 @@ const Menu = () => {
               </div>
             </div>
             {/* Image on the right */}
+
             <div>
-              <img
+              <Image
                 src="/pic6.jpg"
                 alt="Main Course"
-                className="rounded-lg w-[500px] h-[670px] -mt-32 ml-20"
+                className="rounded-lg -mt-36"
+                width={500} // Specify the width
+                height={670} // Specify the height
               />
             </div>
           </div>
@@ -181,11 +187,14 @@ const Menu = () => {
         <div className="mb-20 mt-11">
           <div className="grid grid-cols-1 md:grid-cols-2 -space-x-14">
             {/* Image on the left */}
+
             <div>
-              <img
+              <Image
                 src="/pic7.jpg"
                 alt="Starter Dish"
-                className="rounded-lg w-[500px] h-[670px]"
+                className="rounded-lg"
+                width={500} // Specify the width
+                height={670} // Specify the height
               />
             </div>
 
@@ -305,64 +314,79 @@ const Menu = () => {
               </div>
             </div>
             {/* Image on the right */}
+
             <div>
-              <img
+              <Image
                 src="/pic8.jpg"
                 alt="Main Course"
                 className="rounded-lg w-[500px] h-[670px] -mt-32 ml-20"
+                width={500} // Specify the width
+                height={670} // Specify the height
               />
             </div>
           </div>
         </div>
       </div>
 
-   {/* Clients Section with full-width styling */}
-<div className="w-full bg-white py-12">
-  {/* New title "Partners & Clients" with font-inter */}
-  <h2 className="text-center text-[#333333] text-xl font-normal mb-1 font-inter">
-    Partners & Clients
-  </h2>
+      {/* Clients Section with full-width styling */}
+      <div className="w-full bg-white py-12">
+        {/* New title "Partners & Clients" with font-inter */}
+        <h2 className="text-center text-[#333333] text-xl font-normal mb-1 font-inter">
+          Partners & Clients
+        </h2>
 
-  {/* Existing title "We work with the best people" with font-helvetica */}
-  <h2 className="text-center text-[#333333] text-4xl font-bold mb-6 font-helvetica">
-    We work with the best people
-  </h2>
+        {/* Existing title "We work with the best people" with font-helvetica */}
+        <h2 className="text-center text-[#333333] text-4xl font-bold mb-6 font-helvetica">
+          We work with the best people
+        </h2>
 
-  {/* Client logos with consistent size */}
-  <div className="flex justify-center gap-8 flex-wrap opacity-35">
-    <img
-      src="/image.png"
-      alt="Client Logo"
-      className="w-40 h-40 object-contain"
-    />
-    <img
-      src="/bakery.png"
-      alt="Bakery Logo"
-      className="w-40 h-40 object-contain"
-    />
-    <img
-      src="/forkandspoon.png"
-      alt="Fork and Spoon"
-      className="w-40 h-40 object-contain"
-    />
-    <img
-      src="/wolfcoffee.png"
-      alt="Wolf Coffee"
-      className="w-40 h-40 object-contain"
-    />
-    <img
-      src="/bistro.png"
-      alt="Bistro"
-      className="w-40 h-40 object-contain"
-    />
-    <img
-      src="/bakery.png"
-      alt="Bakery 2"
-      className="w-40 h-40 object-contain"
-    />
-  </div>
-</div>
+        {/* Client logos with consistent size */}
 
+        <div className="flex justify-center gap-8 flex-wrap opacity-35">
+          <Image
+            src="/image.png"
+            alt="Client Logo"
+            className="w-40 h-40 object-contain"
+            width={160} // Specify the width
+            height={160} // Specify the height
+          />
+          <Image
+            src="/bakery.png"
+            alt="Bakery Logo"
+            className="w-40 h-40 object-contain"
+            width={160}
+            height={160}
+          />
+          <Image
+            src="/forkandspoon.png"
+            alt="Fork and Spoon"
+            className="w-40 h-40 object-contain"
+            width={160}
+            height={160}
+          />
+          <Image
+            src="/wolfcoffee.png"
+            alt="Wolf Coffee"
+            className="w-40 h-40 object-contain"
+            width={160}
+            height={160}
+          />
+          <Image
+            src="/bistro.png"
+            alt="Bistro"
+            className="w-40 h-40 object-contain"
+            width={160}
+            height={160}
+          />
+          <Image
+            src="/bakery.png"
+            alt="Bakery 2"
+            className="w-40 h-40 object-contain"
+            width={160}
+            height={160}
+          />
+        </div>
+      </div>
     </>
   );
 };
