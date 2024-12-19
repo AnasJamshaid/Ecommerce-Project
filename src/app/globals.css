@@ -33,3 +33,6 @@ body {
   width: 100%;
   border-radius: 8px;
 }
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}

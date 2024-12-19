@@ -1,67 +1,368 @@
-"use client";
-
 import React from "react";
-import { IoIosArrowForward } from "react-icons/io";
-import SecondHeader from "../components/SecondHeader.js";
-import { usePathname } from "next/navigation";
-import Link from "next/link"; // Import Link from next/link
+import SecondHeader from "../components/SecondHeader";
+import Breadcrumb from "../components/Breadcrumb";
+import { PiCoffee } from "react-icons/pi";
+import Image from "next/image"; // Import Image component
+import { Clients } from "../components/Clients";
 
 const Menu = () => {
-  const pathname = usePathname(); // Get the current path
-  const pathSegments = pathname.split("/").filter((segment) => segment); // Split path into segments
-
-  // Generate the title dynamically from the last segment of the path
-  const pageTitle = pathSegments[pathSegments.length - 1]
-    ? pathSegments[pathSegments.length - 1].replace(/-/g, " ").toUpperCase()
-    : "HOME";
-
-  // Generate the breadcrumb links dynamically
-  const breadcrumbs = pathSegments.map((segment, index) => ({
-    name: segment.replace(/-/g, " "), // Replace hyphens with spaces
-    path: "/" + pathSegments.slice(0, index + 1).join("/"), // Construct the path for each breadcrumb
-  }));
+  const pageTitle = "Our Menu";
 
   return (
     <>
       <SecondHeader />
+      {/* Header Section */}
       <div
-        className="relative text-white h-72 bg-cover bg-center "
-        style={{ backgroundImage: "url('/page-bg.jpg')" }} // Replace with your image URL
+        className="relative text-white h-72 bg-cover bg-center"
+        style={{ backgroundImage: "url('/page-bg.jpg')" }}
       >
-        {/* Overlay for darker background */}
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-
-        {/* Content */}
+        <div className="absolute inset-0 bg-[#333333] bg-opacity-50"></div>
         <div className="relative flex flex-col items-center justify-center h-full space-y-4">
-          {/* Dynamic Page Title */}
-          <h1 className="text-4xl font-bold text-center">{pageTitle}</h1>
-
-          {/* Dynamic Breadcrumb */}
-          <p className="flex items-center text-center text-sm space-x-2">
-            {/* Home link */}
-            <Link href="/" className="text-white hover:text-yellow-500">
-              Home
-            </Link>
-
-            {/* Dynamic Breadcrumb Links */}
-            {breadcrumbs.map((breadcrumb, index) => (
-              <React.Fragment key={index}>
-                <IoIosArrowForward className="mx-2" /> {/* Arrow icon */}
-                <Link
-                  href={breadcrumb.path}
-                  className={`hover:underline ${
-                    index === breadcrumbs.length - 1
-                      ? "text-yellow-500"
-                      : "text-white hover:text-yellow-500"
-                  }`}
-                >
-                  {breadcrumb.name}
-                </Link>
-              </React.Fragment>
-            ))}
-          </p>
+          <h1 className="text-4xl font-bold">{pageTitle}</h1>
+          <Breadcrumb />
         </div>
       </div>
+
+      {/* Main Content */}
+      <div className="py-12 px-6 md:px-16 lg:px-32 bg-white text-[#333333] font-helvetica">
+        {/* Starter Menu Section */}
+        <div className="mb-20 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 -space-x-14">
+            {/* Image on the left */}
+            <div>
+              <img
+                src="/pic5.jpg"
+                alt="Starter Dish"
+                className="rounded-lg w-[500px] h-[670px]"
+              />
+            </div>
+
+            {/* Text on the right */}
+            <div className="space-y-11 font-helvetica">
+              <PiCoffee className="text-[#FF9F0D] text-3xl " />
+              {/* Starter Menu Title with Icon */}
+              <div className="flex items-center space-x-2">
+                <h2 className="text-4xl font-bold text-left">Starter Menu</h2>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">
+                    Alder Grilled Chinook Salmon
+                  </h3>
+                  <span className="text-[#FF9F0D] font-bold">32$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Toasted French bread topped with romesco, cheddar
+                </p>
+                <p className="text-[#333333]">550 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold text-[#FF9F0D]">
+                    Berries and Creme Tart
+                  </h3>
+                  <span className="text-[#FF9F0D] font-bold">43$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Mascarpone, ricotta, mozzarella, kilaggio
+                </p>
+                <p className="text-[#333333]">700 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">
+                    Tormentoso Bush Pizza Pintoage
+                  </h3>
+                  <span className="text-[#FF9F0D] font-bold">14$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Ground cumin, avocado, peeled and cubed
+                </p>
+                <p className="text-[#333333]">1000 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">
+                    Spicy Vegan Potato Curry
+                  </h3>
+                  <span className="text-[#FF9F0D] font-bold">35$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Sprinkle cashew cheese, crumbled blue cheese
+                </p>
+                <p className="text-[#333333]">600 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Course Section */}
+        <div>
+          <PiCoffee className="text-[#FF9F0D] text-3xl mb-6" />
+          <h2 className="text-4xl font-bold mb-10 text-left">Main Course</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 space-x-14">
+            {/* Text on the left */}
+            <div className="space-y-11 font-helvetica">
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">
+                    Optic Big Breakfast Combo Menu
+                  </h3>
+                  <span className="text-[#FF9F0D] font-bold">32$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Toasted French bread topped with romesco, cheddar
+                </p>
+                <p className="text-[#333333]">560 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">
+                    Cashew Chicken With Stir-Fry
+                  </h3>
+                  <span className="text-[#FF9F0D] font-bold">43$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Coriander, ricotta, mozzarella, kilaggio
+                </p>
+                <p className="text-[#333333]">700 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">
+                    Vegetables & Green Salad
+                  </h3>
+                  <span className="text-[#FF9F0D] font-bold">14$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Ground cumin, avocado, peeled and cubed
+                </p>
+                <p className="text-[#333333]">500 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">
+                    Spicy Vegan Potato Curry
+                  </h3>
+                  <span className="text-[#FF9F0D] font-bold">35$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Sprinkle cashew cheese, crumbled blue cheese
+                </p>
+                <p className="text-[#333333]">600 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+            </div>
+            {/* Image on the right */}
+            <div>
+              <img
+                src="/pic6.jpg"
+                alt="Main Course"
+                className="rounded-lg w-[500px] h-[670px] -mt-32 ml-20"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Clients Section with full-width styling */}
+      <div className="w-full  bg-white  py-12 -mt-36">
+        <Clients />
+      </div>
+
+      <div className="py-12 px-6 md:px-16 lg:px-32 bg-white text-[#333333] font-helvetica">
+        {/* Starter Menu Section */}
+        <div className="mb-20 mt-11">
+          <div className="grid grid-cols-1 md:grid-cols-2 -space-x-14">
+            {/* Image on the left */}
+            <div>
+              <img
+                src="/pic7.jpg"
+                alt="Starter Dish"
+                className="rounded-lg w-[500px] h-[670px]"
+              />
+            </div>
+
+            {/* Text on the right */}
+            <div className="space-y-11 font-helvetica">
+              <PiCoffee className="text-[#FF9F0D] text-3xl " />
+              {/* Starter Menu Title with Icon */}
+              <div className="flex items-center space-x-2">
+                <h2 className="text-4xl font-bold text-left">Dessert</h2>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">Fig and lemon cake</h3>
+                  <span className="text-[#FF9F0D] font-bold">32$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Toasted French bread topped with romano, cheddar
+                </p>
+                <p className="text-[#333333]">560 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">
+                    Creamy mascarpone cake
+                  </h3>
+                  <span className="text-[#FF9F0D] font-bold">43$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Gorgonzola, ricotta, mozzarella, taleggio
+                </p>
+                <p className="text-[#333333]">700 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">
+                    Pastry, blueberries, lemon juice
+                  </h3>
+                  <span className="text-[#FF9F0D] font-bold">14$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Ground cumin, avocados, peeled and cubed
+                </p>
+                <p className="text-[#333333]">1000 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">Pain au chocolat</h3>
+                  <span className="text-[#FF9F0D] font-bold">35$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Spreadable cream cheese, crumbled blue cheese
+                </p>
+                <p className="text-[#333333]">560 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Course Section */}
+        <div>
+          <PiCoffee className="text-[#FF9F0D] text-3xl mb-6" />
+          <h2 className="text-4xl font-bold mb-10 text-left">Drinks</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 space-x-14">
+            {/* Text on the left */}
+            <div className="space-y-11 font-helvetica">
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">Caffè macchiato</h3>
+                  <span className="text-[#FF9F0D] font-bold">32$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Toasted French bread topped with romesco, cheddar
+                </p>
+                <p className="text-[#333333]">560 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">
+                    Aperol Spritz Capacianno
+                  </h3>
+                  <span className="text-[#FF9F0D] font-bold">43$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Coriander, ricotta, mozzarella, kilaggio
+                </p>
+                <p className="text-[#333333]">700 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">Caffe Latte Campuri</h3>
+                  <span className="text-[#FF9F0D] font-bold">14$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Ground cumin, avocado, peeled and cubed
+                </p>
+                <p className="text-[#333333]">500 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold">
+                    Tormentoso BushTea Pintoage
+                  </h3>
+                  <span className="text-[#FF9F0D] font-bold">35$</span>
+                </div>
+                <p className="text-[#333333]">
+                  Sprinkle cashew cheese, crumbled blue cheese
+                </p>
+                <p className="text-[#333333]">600 CAL</p>
+                <div className="border-t-2 border-dotted my-4"></div>
+              </div>
+            </div>
+            {/* Image on the right */}
+            <div>
+              <img
+                src="/pic8.jpg"
+                alt="Main Course"
+                className="rounded-lg w-[500px] h-[670px] -mt-32 ml-20"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+   {/* Clients Section with full-width styling */}
+<div className="w-full bg-white py-12">
+  {/* New title "Partners & Clients" with font-inter */}
+  <h2 className="text-center text-[#333333] text-xl font-normal mb-1 font-inter">
+    Partners & Clients
+  </h2>
+
+  {/* Existing title "We work with the best people" with font-helvetica */}
+  <h2 className="text-center text-[#333333] text-4xl font-bold mb-6 font-helvetica">
+    We work with the best people
+  </h2>
+
+  {/* Client logos with consistent size */}
+  <div className="flex justify-center gap-8 flex-wrap opacity-35">
+    <img
+      src="/image.png"
+      alt="Client Logo"
+      className="w-40 h-40 object-contain"
+    />
+    <img
+      src="/bakery.png"
+      alt="Bakery Logo"
+      className="w-40 h-40 object-contain"
+    />
+    <img
+      src="/forkandspoon.png"
+      alt="Fork and Spoon"
+      className="w-40 h-40 object-contain"
+    />
+    <img
+      src="/wolfcoffee.png"
+      alt="Wolf Coffee"
+      className="w-40 h-40 object-contain"
+    />
+    <img
+      src="/bistro.png"
+      alt="Bistro"
+      className="w-40 h-40 object-contain"
+    />
+    <img
+      src="/bakery.png"
+      alt="Bakery 2"
+      className="w-40 h-40 object-contain"
+    />
+  </div>
+</div>
+
     </>
   );
 };

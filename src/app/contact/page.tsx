@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import SecondHeader from "../components/SecondHeader";
-import { IoIosArrowForward } from "react-icons/io";
-import Link from "next/link"; // Import Link from next/link
+import Breadcrumb from "../components/Breadcrumb"; // Import the Breadcrumb component
 
 const ContactPage = () => {
+  const pageTitle = "Contact"; // Static title for the Contact page
+
   return (
     <>
       <SecondHeader />
@@ -15,19 +18,15 @@ const ContactPage = () => {
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
         {/* Content */}
-        <div className="relative flex flex-col items-center justify-center h-full space-y-4">
+        <div
+          className="relative flex flex-col items-center justify-center h-full space-y-4"
+          style={{ fontFamily: "Helvetica, Arial, sans-serif" }} // Use Helvetica font for header
+        >
           {/* Page Title */}
-          <h1 className="text-4xl font-bold text-center">Contact</h1>
+          <h1 className="text-4xl font-bold text-center">{pageTitle}</h1>
 
-          {/* Breadcrumb */}
-          <p className="flex items-center text-center text-sm space-x-2">
-            {/* Home Link */}
-            <Link href="/" className="text-white hover:text-yellow-500">
-              Home
-            </Link>
-            <IoIosArrowForward className="mx-2" /> {/* Arrow icon */}
-            <span className="text-yellow-500">Contact</span>
-          </p>
+          {/* Breadcrumb Component */}
+          <Breadcrumb />
         </div>
       </div>
 

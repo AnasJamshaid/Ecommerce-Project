@@ -1,9 +1,10 @@
 import React from 'react';
-import { IoIosArrowForward } from 'react-icons/io';
 import SecondHeader from '../components/SecondHeader';
-import Link from 'next/link'; // Import Link from next/link
+import Breadcrumb from '../components/Breadcrumb'; // Import the Breadcrumb component
 
 const ShopPage = () => {
+  const pageTitle = "Shop"; // Static title for the page
+
   return (
     <>
       <SecondHeader />
@@ -17,17 +18,10 @@ const ShopPage = () => {
         {/* Content */}
         <div className="relative flex flex-col items-center justify-center h-full space-y-4">
           {/* Page Title */}
-          <h1 className="text-4xl font-bold text-center">Shop</h1>
+          <h1 className="text-4xl font-bold text-center">{pageTitle}</h1>
 
           {/* Breadcrumb */}
-          <p className="flex items-center text-center text-sm space-x-2">
-            {/* Home Link */}
-            <Link href="/" className="text-white hover:text-yellow-500">
-              Home
-            </Link>
-            <IoIosArrowForward className="mx-2" /> {/* Arrow icon */}
-            <span className="text-yellow-500">Shop</span>
-          </p>
+          <Breadcrumb />
         </div>
       </div>
 
