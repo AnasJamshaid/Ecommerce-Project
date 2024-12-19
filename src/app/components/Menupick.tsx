@@ -97,7 +97,7 @@ export const Menupick = () => {
               className="flex items-center space-x-4 p-4 rounded-lg shadow-lg transition-all hover:shadow-2xl hover:bg-[#333] cursor-pointer"
             >
               <Image
-                src={`/assets/${item.image}`} // Updated path
+                src={`/${item.image}`} // Updated path
                 alt={item.name}
                 width={64}
                 height={64}
