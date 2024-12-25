@@ -21,6 +21,7 @@ type Product = {
   image: string;
 };
 
+
 const ShopPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]); // State to store products
   const [currentPage, setCurrentPage] = useState(1); // State to store current page
@@ -162,7 +163,7 @@ const ShopPage: React.FC = () => {
         <input
           type="text"
           placeholder="Search Product"
-          className="w-full px-3 py-2 bg-transparent focus:outline-none"
+          className="w-full px-3 py-2 bg-transparent text-black focus:outline-none"
         />
         <button className="px-4 bg-[#FF9F0D] text-white rounded-r-md flex items-center justify-center">
           <FaSearch className="h-12 w-5" />
